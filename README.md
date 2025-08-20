@@ -1,6 +1,7 @@
 # Wine Quality Software
 
-This project uses deep learning on a large dataset of wines with varying qualities to determine the highest quality wines based on its chemical composition.
+This project uses deep learning on a large dataset of wines with varying qualities to
+determine the highest quality wines based on its chemical composition.
 
 ## Dataset Variables
 
@@ -12,6 +13,11 @@ The wine dataset contains 12 variables for each type of wine:
 5. Chlorides: Contribute to the saltiness in wine.
 6. Free Sulfur Dioxide: Added to the wine.
 7. Total Sulfur Dioxide: The sum of bound and free sulfur dioxide.
+8. Density
+9. pH
+10. Sulphates
+11. Alcohol
+12. Quality
 
 ## Project Structure
 
@@ -19,22 +25,17 @@ The wine dataset contains 12 variables for each type of wine:
 .
 ├── Makefile
 ├── README.md
-├── example_screenshot.png
-├── haarcascade_frontalface_default.xml
+├── model
+│   ├── __init__.py
+│   ├── data_loading.py
+│   └── neural_network.py
+├── output
+│   └── alcohol_distribution.png
 ├── poetry.lock
 ├── pyproject.toml
-├── recognition
-│   ├── __init__.py
-│   ├── facial_recognition.py
-│   └── tests
-│       ├── __init__.py
-│       └── test_facial_recognition.py
-├── src
-│   ├── __init__.py
-│   └── main.py
-└── webcam_server
+└── src
     ├── __init__.py
-    └── capture_and_save.py
+    └── main.py
 ```
 
 ## Installation
@@ -51,40 +52,11 @@ To create a virtual environment, run `poetry env activate` inside the top-level 
 To enter the virtual environment, copy and paste the last command's output.
 If you would like to exit the virtual environment, run `deactivate`.
 
-## Running the Webcam Capture Script (Windows Powershell)
+## How to Run
 
-This project was created to port images from the Windows-side webcam capture script, and send them
-over to the WSL-side facial recognition software.
-
-1. In Windows Powershell, navigate to the folder containing `capture_and_save.py`:
-```powershell
-cd "C:\path\to\webcam_server"
-```
-2. Run the script with the following command:
-```powershell
-python .\capture_and_save.py
-```
-
-This will continuously save webcam frames to a shared folder.
-
-## Running the Facial Recognition Script (WSL)
-1. Open your WSL terminal (Ubuntu-24.04).
-2. Navigate to your project directory:
-```bash
-cd ~/facial-recognition
-```
-3. Run the main controller script:
-```bash
-python3 src/main.py
-```
-
-This script reads the latest frame from the shared folder and runs facial recognition using `recognition/facial_recognition.py`.
-
-## Notes
-- Ensure the shared folder (e.g. C:\Users\kiara\wsl-cam-share) is writable by your Windows user.
-- WSL accesses Windows files via `/mnt/c/...`, so make sure paths in your WSL script reflect that.
-- Since this project uses `cv2.imshow` in WSL, make sure that an X server is running and that you've set `export DISPLAY=:0`
-
+To run this project, simply use `make` or `make run`.
+It will generate a histogram of the alcohol distribution between red and white wines,
+which determines how common each alcohol level is among the wines.
 
 ## Author
 
@@ -93,6 +65,16 @@ Kiara Houghton, 2025
 ## Badges
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
+![Poetry](https://img.shields.io/badge/Poetry-%233B82F6.svg?style=for-the-badge&logo=poetry&logoColor=0B3D8D)
 
-![OpenCV](https://img.shields.io/badge/opencv-%23white.svg?style=for-the-badge&logo=opencv&logoColor=white)
+![Matplotlib](https://img.shields.io/badge/Matplotlib-%23ffffff.svg?style=for-the-badge&logo=Matplotlib&logoColor=black)
+![Keras](https://img.shields.io/badge/Keras-%23D00000.svg?style=for-the-badge&logo=Keras&logoColor=white)
+![Pandas](https://img.shields.io/badge/pandas-%23150458.svg?style=for-the-badge&logo=pandas&logoColor=white)
+![NumPy](https://img.shields.io/badge/numpy-%23013243.svg?style=for-the-badge&logo=numpy&logoColor=white)
+![scikit-learn](https://img.shields.io/badge/scikit--learn-%23F7931E.svg?style=for-the-badge&logo=scikit-learn&logoColor=white)
+![TensorFlow](https://img.shields.io/badge/TensorFlow-%23FF6F00.svg?style=for-the-badge&logo=TensorFlow&logoColor=white)
 ![Pytest](https://img.shields.io/badge/pytest-%23ffffff.svg?style=for-the-badge&logo=pytest&logoColor=2f9fe3)
+
+![Linux](https://img.shields.io/badge/Linux-FCC624?style=for-the-badge&logo=linux&logoColor=black)
+![Ubuntu](https://img.shields.io/badge/Ubuntu-E95420?style=for-the-badge&logo=ubuntu&logoColor=white)
+![Windows](https://img.shields.io/badge/Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)
