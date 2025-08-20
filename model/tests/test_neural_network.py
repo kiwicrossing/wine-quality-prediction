@@ -3,6 +3,7 @@ import numpy as np
 
 from ..neural_network import WineQualityModel
 
+
 def test_build_model_creates_keras_model():
     model_wrapper = WineQualityModel()
     model = model_wrapper.build_model()
@@ -13,12 +14,14 @@ def test_build_model_creates_keras_model():
     assert model.input_shape[-1] == 12
     assert model.output_shape[-1] == 1
 
+
 def test_train_model_raises_if_not_built():
     model_wrapper = WineQualityModel()
     X_train = np.random.rand(4, 12)
     y_train = np.array([0, 1, 0, 1])
     with pytest.raises(ValueError):
         model_wrapper.train_model(X_train, y_train)
+
 
 def test_train_model_runs(monkeypatch):
     model_wrapper = WineQualityModel()
@@ -28,12 +31,15 @@ def test_train_model_runs(monkeypatch):
 
     # Patch fit to avoid actual training
     called = {}
+
     def fake_fit(X, y, epochs, batch_size, verbose):
         called["fit"] = True
         return None
+
     monkeypatch.setattr(model, "fit", fake_fit)
     model_wrapper.train_model(X_train, y_train)
     assert called.get("fit", False)
+
 
 def test_test_model_predicts_and_prints(monkeypatch, capsys):
     model_wrapper = WineQualityModel()
