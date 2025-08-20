@@ -1,6 +1,6 @@
 # Wine Quality Software
 
-This project uses deep learning on a large dataset of wines with varying qualities to
+This project uses **deep learning** on a large dataset of wines with varying qualities to
 determine the highest quality wines based on its chemical composition.
 
 ## Dataset Variables
@@ -17,7 +17,7 @@ The wine dataset contains 12 variables for each type of wine:
 9. pH
 10. Sulphates
 11. Alcohol
-12. Quality
+12. Quality: Output variable (score between 0 and 10).
 
 ## Project Structure
 
@@ -57,6 +57,14 @@ If you would like to exit the virtual environment, run `deactivate`.
 To run this project, simply use `make` or `make run`.
 It will generate a histogram of the alcohol distribution between red and white wines,
 which determines how common each alcohol level is among the wines.
+
+## Dataset Information
+
+The two datasets are related to red and white variants of the Portuguese "Vinho Verde" wine. Due to privacy and logistic issues, only physicochemical (inputs) and sensory (the output) variables are available (e.g. there is no data about grape types, wine brand, wine selling price, etc.).
+
+The dataset that this project uses is from the [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/).
+
+P. Cortez, A. Cerdeira, F. Almeida, T. Matos, and J. Reis. "Wine Quality," UCI Machine Learning Repository, 2009. [Online]. Available: https://doi.org/10.24432/C56S3T.
 
 ## Author
 

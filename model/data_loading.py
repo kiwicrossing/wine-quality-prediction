@@ -11,17 +11,17 @@ class WineDataLoader:
     A class to load, preprocess, and visualize wine quality data.
     """
 
-    def __init__(self):
-        self.red_url = "http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-red.csv"
-        self.white_url = "http://archive.ics.uci.edu/ml/machine-learning-databases/wine-quality/winequality-white.csv"
+    def __init__(self, red_path="dataset/winequality-red.csv", white_path="dataset/winequality-white.csv"):
+        self.red_path = red_path
+        self.white_path = white_path
         self.wines = None
 
     def load_data(self):
         """
-        Loads red and white wine datasets, adds type labels, merges them, and removes missing values.
+        Loads red and white wine datasets from local CSV files, adds type labels, merges them, and removes missing values.
         """
-        red = pd.read_csv(self.red_url, sep=";")
-        white = pd.read_csv(self.white_url, sep=";")
+        red = pd.read_csv(self.red_path, sep=";")
+        white = pd.read_csv(self.white_path, sep=";")
 
         red["type"] = 1
         white["type"] = 0
