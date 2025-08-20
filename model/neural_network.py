@@ -1,5 +1,5 @@
 from tensorflow.keras.models import Sequential
-from tensorflow.keras.layers import Dense
+from tensorflow.keras.layers import Dense, Input
 
 from model.data_loading import WineDataLoader
 
@@ -17,8 +17,8 @@ class WineQualityModel:
         Builds and compiles the neural network model.
         """
         model = Sequential()
-
-        model.add(Dense(12, activation="relu", input_dim=12))
+        model.add(Input(shape=(12,)))
+        model.add(Dense(12, activation="relu"))
         model.add(Dense(9, activation="relu"))
         model.add(Dense(1, activation="sigmoid"))
         model.compile(
