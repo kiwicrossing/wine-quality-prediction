@@ -63,6 +63,8 @@ which determines how common each alcohol level is among the wines.
 Kiara Houghton, 2025
 
 ## Badges
+[![codecov](https://codecov.io/github/kiwicrossing/wine-quality-prediction/graph/badge.svg?token=G2RBXAYXXH)](https://codecov.io/github/kiwicrossing/wine-quality-prediction)
+
 ![Python](https://img.shields.io/badge/python-3670A0?style=for-the-badge&logo=python&logoColor=ffdd54)
 [![Code style: black](https://img.shields.io/badge/code%20style-black-000000.svg)](https://github.com/psf/black)
 ![Poetry](https://img.shields.io/badge/Poetry-%233B82F6.svg?style=for-the-badge&logo=poetry&logoColor=0B3D8D)
