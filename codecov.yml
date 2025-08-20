@@ -1,3 +1,6 @@
+codecov:
+  token: 93f60620-4851-4a1c-b362-fd8d2dd02699
+
 coverage:
   status:
     project:
