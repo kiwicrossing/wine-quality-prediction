@@ -1,0 +1,11 @@
+venv/
+.venv/
+myvenv/
+
+__pycache__/
+.pytest_cache/
+**/__pycache__/
+
+.coverage
+coverage.txt
+htmlcov/

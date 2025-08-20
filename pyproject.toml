@@ -1,0 +1,23 @@
+[project]
+name = "wine-quality-prediction"
+version = "0.1.0"
+description = "This project ranks the quality of wine based off of given specifications using deep learning."
+authors = [
+    {name = "kiwicrossing",email = "thekiwi921@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12"
+dependencies = [
+    "black (>=25.1.0,<26.0.0)",
+    "pytest (>=8.4.1,<9.0.0)",
+    "coverage (>=7.10.4,<8.0.0)",
+    "opencv-python (>=4.12.0.88,<5.0.0.0)"
+]
+
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.poetry]
+package-mode = false
