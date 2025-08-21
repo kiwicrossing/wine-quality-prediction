@@ -79,6 +79,23 @@ The dataset that this project uses is from the [UC Irvine Machine Learning Repos
 
 P. Cortez, A. Cerdeira, F. Almeida, T. Matos, and J. Reis. "Wine Quality," UCI Machine Learning Repository, 2009. [Online]. Available: https://doi.org/10.24432/C56S3T.
 
+## Example Use Cases
+
+- **Wine Type Classification:**
+  Predict whether a wine is red or white based on its chemical properties using the trained neural network.
+
+- **Quality Prediction:**
+  Extend the model to predict wine quality scores, helping winemakers or distributors assess product quality automatically.
+
+- **Batch Quality Control:**
+  Use the model to flag batches of wine that are likely to be of low quality before bottling, saving time and resources.
+
+- **Data Visualization:**
+  Use the generated graphs to present insights about the dataset, such as how alcohol content varies between red and white wines.
+
+- **Model Performance Monitoring:**
+  Track training and validation accuracy/loss over time to detect overfitting or underfitting and tune model hyperparameters accordingly.
+
 ## Author
 
 Kiara Houghton, 2025
