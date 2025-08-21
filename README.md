@@ -24,7 +24,8 @@ determine the highest quality wines based on its chemical composition.
 │   └── tests
 │       ├── __init__.py
 │       ├── test_data_loading.py
-│       └── test_neural_network.py
+│       ├── test_neural_network.py
+│       └── test_sql_analytics.py
 ├── output
 │   ├── accuracy_per_epoch.png
 │   ├── alcohol_distribution.png
