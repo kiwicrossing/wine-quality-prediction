@@ -9,12 +9,25 @@ determine the highest quality wines based on its chemical composition.
 .
 ├── Makefile
 ├── README.md
+├── codecov.yml
+├── coverage.xml
+├── dataset
+│   ├── winequality-red.csv
+│   ├── winequality-white.csv
+│   └── winequality.names
 ├── model
 │   ├── __init__.py
 │   ├── data_loading.py
-│   └── neural_network.py
+│   ├── neural_network.py
+│   └── tests
+│       ├── __init__.py
+│       ├── test_data_loading.py
+│       └── test_neural_network.py
 ├── output
-│   └── alcohol_distribution.png
+│   ├── accuracy_per_epoch.png
+│   ├── alcohol_distribution.png
+│   ├── loss_per_epoch.png
+│   └── training_history_table.png
 ├── poetry.lock
 ├── pyproject.toml
 └── src
