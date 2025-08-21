@@ -3,34 +3,36 @@
 This project uses **deep learning** on a large dataset of wines with varying qualities to
 determine the highest quality wines based on its chemical composition.
 
-## Dataset Variables
-
-The wine dataset contains 12 variables for each type of wine:
-1. Fixed Acidity: The non-volatile acids in the wine (contributing to the tartness).
-2. Volatile Acidity: The acetic acid content (contributing to the vinegar-like taste).
-3. Citric Acid: One of the fixed acids in wine.
-4. Residual Sugar: The sugar that remains after fermentation stops.
-5. Chlorides: Contribute to the saltiness in wine.
-6. Free Sulfur Dioxide: Added to the wine.
-7. Total Sulfur Dioxide: The sum of bound and free sulfur dioxide.
-8. Density
-9. pH
-10. Sulphates
-11. Alcohol
-12. Quality: Output variable (score between 0 and 10).
-
 ## Project Structure
 
 ```bash
 .
 ├── Makefile
 ├── README.md
+├── codecov.yml
+├── coverage.xml
+├── dataset
+│   ├── winequality-red.csv
+│   ├── winequality-white.csv
+│   └── winequality.names
 ├── model
 │   ├── __init__.py
 │   ├── data_loading.py
-│   └── neural_network.py
+│   ├── neural_network.py
+│   ├── sql_analytics.py
+│   └── tests
+│       ├── __init__.py
+│       ├── test_data_loading.py
+│       └── test_neural_network.py
 ├── output
-│   └── alcohol_distribution.png
+│   ├── accuracy_per_epoch.png
+│   ├── alcohol_distribution.png
+│   ├── database_info
+│   │   ├── feature_correlations.csv
+│   │   └── wine_data.db
+│   ├── feature_correlations.png
+│   ├── loss_per_epoch.png
+│   └── training_history_table.png
 ├── poetry.lock
 ├── pyproject.toml
 └── src
@@ -58,6 +60,22 @@ To run this project, simply use `make` or `make run`.
 It will generate a histogram of the alcohol distribution between red and white wines,
 which determines how common each alcohol level is among the wines.
 
+## Generated Graphs
+
+After running the project, several graphs and visualizations are generated and saved in the `output/` directory:
+
+- **Alcohol Distribution Histogram:**  
+  A side-by-side histogram comparing the alcohol content distribution between red and white wines.
+
+- **Training History Table:**  
+  A table (as a PNG image) showing the training and validation loss and accuracy for each epoch.
+
+- **Loss per Epoch:**  
+  A line plot showing how the training and validation loss change over each epoch.
+
+- **Accuracy per Epoch:**  
+  A line plot showing how the training and validation accuracy change over each epoch.
+
 ## Dataset Information
 
 The two datasets are related to red and white variants of the Portuguese "Vinho Verde" wine. Due to privacy and logistic issues, only physicochemical (inputs) and sensory (the output) variables are available (e.g. there is no data about grape types, wine brand, wine selling price, etc.).
@@ -65,6 +83,23 @@ The two datasets are related to red and white variants of the Portuguese "Vinho 
 The dataset that this project uses is from the [UC Irvine Machine Learning Repository](http://archive.ics.uci.edu/).
 
 P. Cortez, A. Cerdeira, F. Almeida, T. Matos, and J. Reis. "Wine Quality," UCI Machine Learning Repository, 2009. [Online]. Available: https://doi.org/10.24432/C56S3T.
+
+## Example Use Cases
+
+- **Wine Type Classification:**
+  Predict whether a wine is red or white based on its chemical properties using the trained neural network.
+
+- **Quality Prediction:**
+  Extend the model to predict wine quality scores, helping winemakers or distributors assess product quality automatically.
+
+- **Batch Quality Control:**
+  Use the model to flag batches of wine that are likely to be of low quality before bottling, saving time and resources.
+
+- **Data Visualization:**
+  Use the generated graphs to present insights about the dataset, such as how alcohol content varies between red and white wines.
+
+- **Model Performance Monitoring:**
+  Track training and validation accuracy/loss over time to detect overfitting or underfitting and tune model hyperparameters accordingly.
 
 ## Author
 
