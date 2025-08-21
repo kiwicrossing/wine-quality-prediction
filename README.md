@@ -19,6 +19,7 @@ determine the highest quality wines based on its chemical composition.
 │   ├── __init__.py
 │   ├── data_loading.py
 │   ├── neural_network.py
+│   ├── sql_analytics.py
 │   └── tests
 │       ├── __init__.py
 │       ├── test_data_loading.py
@@ -26,6 +27,10 @@ determine the highest quality wines based on its chemical composition.
 ├── output
 │   ├── accuracy_per_epoch.png
 │   ├── alcohol_distribution.png
+│   ├── database_info
+│   │   ├── feature_correlations.csv
+│   │   └── wine_data.db
+│   ├── feature_correlations.png
 │   ├── loss_per_epoch.png
 │   └── training_history_table.png
 ├── poetry.lock
