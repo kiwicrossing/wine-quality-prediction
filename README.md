@@ -16,11 +16,13 @@ determine the highest quality wines based on its chemical composition.
 │   ├── winequality-white.csv
 │   └── winequality.names
 ├── icons
+│   ├── README.md
 │   ├── certificate.svg
 │   ├── chart-column.svg
 │   ├── database.svg
 │   ├── folder-tree.svg
 │   ├── grapes.svg
+│   ├── icons.svg
 │   ├── pencil.svg
 │   ├── play.svg
 │   ├── wine-glass.svg
