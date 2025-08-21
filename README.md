@@ -1,5 +1,5 @@
 # Wine Quality Software
-![wine-glass.svg](wine-glass.svg)
+![wine-glass.svg](icons/wine-glass.svg)
 
 This project uses **deep learning** on a large dataset of wines with varying qualities to
 determine the highest quality wines based on its chemical composition.
