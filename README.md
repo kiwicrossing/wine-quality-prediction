@@ -1,4 +1,4 @@
-# Wine Quality Software <img src="icons/wine-glass.svg" width="60"/>
+# Wine Quality Software <img src="icons/wine-glass.svg" width="40"/>
 <!-- ![wine-glass.svg](icons/wine-glass.svg) -->
 
 This project uses **deep learning** on a large dataset of wines with varying qualities to
