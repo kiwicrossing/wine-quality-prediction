@@ -15,6 +15,16 @@ determine the highest quality wines based on its chemical composition.
 │   ├── winequality-red.csv
 │   ├── winequality-white.csv
 │   └── winequality.names
+├── icons
+│   ├── certificate.svg
+│   ├── chart-column.svg
+│   ├── database.svg
+│   ├── folder-tree.svg
+│   ├── grapes.svg
+│   ├── pencil.svg
+│   ├── play.svg
+│   ├── wine-glass.svg
+│   └── wrench.svg
 ├── model
 │   ├── __init__.py
 │   ├── data_loading.py
