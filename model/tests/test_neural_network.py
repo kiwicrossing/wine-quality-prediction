@@ -32,8 +32,9 @@ def test_train_model_runs(monkeypatch):
     # Patch fit to avoid actual training
     called = {}
 
-    def fake_fit(X, y, epochs, batch_size, verbose):
+    def fake_fit(X, y, epochs, batch_size, verbose, **kwargs):
         called["fit"] = True
+        called["validation_data"] = kwargs.get("validation_data", None)
         return None
 
     monkeypatch.setattr(model, "fit", fake_fit)
