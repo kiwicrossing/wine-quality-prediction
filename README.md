@@ -3,7 +3,7 @@
 This project uses **deep learning** on a large dataset of wines with varying qualities to
 determine the highest quality wines based on its chemical composition.
 
-## <img src="icons/folder-tree.svg" width="25"/> Project Structure
+## <img src="icons/folder-tree.svg" width="25"/>  Project Structure
 
 ```bash
 .
