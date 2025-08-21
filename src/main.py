@@ -11,7 +11,11 @@ def main():
     # Build and train model
     nn = WineQualityModel()
     model = nn.build_model()
-    nn.train_model(X_train, y_train)
+    nn.train_model(X_train, y_train, X_val=X_test, y_val=y_test)
+
+    # Plot and save training history
+    nn.plot_training_history(save_dir="output")
+    nn.save_training_history_table_plot(save_dir="output")
 
     # Test the model on new data
     nn.test_model(X_test)

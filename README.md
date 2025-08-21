@@ -3,22 +3,6 @@
 This project uses **deep learning** on a large dataset of wines with varying qualities to
 determine the highest quality wines based on its chemical composition.
 
-## Dataset Variables
-
-The wine dataset contains 12 variables for each type of wine:
-1. Fixed Acidity: The non-volatile acids in the wine (contributing to the tartness).
-2. Volatile Acidity: The acetic acid content (contributing to the vinegar-like taste).
-3. Citric Acid: One of the fixed acids in wine.
-4. Residual Sugar: The sugar that remains after fermentation stops.
-5. Chlorides: Contribute to the saltiness in wine.
-6. Free Sulfur Dioxide: Added to the wine.
-7. Total Sulfur Dioxide: The sum of bound and free sulfur dioxide.
-8. Density
-9. pH
-10. Sulphates
-11. Alcohol
-12. Quality: Output variable (score between 0 and 10).
-
 ## Project Structure
 
 ```bash
@@ -57,6 +41,22 @@ If you would like to exit the virtual environment, run `deactivate`.
 To run this project, simply use `make` or `make run`.
 It will generate a histogram of the alcohol distribution between red and white wines,
 which determines how common each alcohol level is among the wines.
+
+## Generated Graphs
+
+After running the project, several graphs and visualizations are generated and saved in the `output/` directory:
+
+- **Alcohol Distribution Histogram:**  
+  A side-by-side histogram comparing the alcohol content distribution between red and white wines.
+
+- **Training History Table:**  
+  A table (as a PNG image) showing the training and validation loss and accuracy for each epoch.
+
+- **Loss per Epoch:**  
+  A line plot showing how the training and validation loss change over each epoch.
+
+- **Accuracy per Epoch:**  
+  A line plot showing how the training and validation accuracy change over each epoch.
 
 ## Dataset Information
 
