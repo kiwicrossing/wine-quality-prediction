@@ -1,6 +1,8 @@
 import pytest
 import pandas as pd
 import numpy as np
+import os
+import sqlite3
 from unittest.mock import patch
 
 from ..data_loading import WineDataLoader
@@ -104,3 +106,24 @@ def test_split_data_returns_correct_shapes(
     assert set(X_test.columns) == set(sample_red_df.columns)
     assert y_train.isin([0, 1]).all()
     assert y_test.isin([0, 1]).all()
+
+
+@patch("pandas.read_csv")
+def test_save_to_sqlite(mock_read_csv, sample_red_df, sample_white_df, tmp_path):
+    mock_read_csv.side_effect = [sample_red_df.copy(), sample_white_df.copy()]
+    loader = WineDataLoader()
+    loader.load_data()
+
+    db_path = tmp_path / "wine_data.db"
+    table_name = "wines"
+    loader.save_to_sqlite(db_path=str(db_path), table_name=table_name)
+
+    assert os.path.exists(db_path)
+
+    conn = sqlite3.connect(db_path)
+    df = pd.read_sql_query(f"SELECT * FROM {table_name}", conn)
+    conn.close()
+
+    assert not df.empty
+    assert "type" in df.columns
+    assert df.shape[0] == 4
