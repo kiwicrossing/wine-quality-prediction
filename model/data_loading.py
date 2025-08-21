@@ -1,6 +1,9 @@
 import matplotlib.pyplot as plt
 import pandas as pd
 import numpy as np
+import sqlite3
+import os
+
 from sklearn.model_selection import train_test_split
 from keras.models import Sequential
 from keras.layers import Dense
@@ -103,3 +106,15 @@ class WineDataLoader:
         )
 
         return X_train, X_test, y_train, y_test
+
+    def save_to_sqlite(self, db_path="output/database_info/wine_data.db", table_name="wines"):
+        """
+        Saves the combined wine DataFrame to a SQLite database.
+        """
+        os.makedirs(os.path.dirname(db_path), exist_ok=True)
+        if self.wines is None:
+            self.load_data()
+        conn = sqlite3.connect(db_path)
+        self.wines.to_sql(table_name, conn, if_exists="replace", index=False)
+        conn.close()
+        print(f"Data saved to {db_path} in table '{table_name}'")
