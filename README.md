@@ -3,7 +3,7 @@
 This project uses **deep learning** on a large dataset of wines with varying qualities to
 determine the highest quality wines based on its chemical composition.
 
-## <img src="icons/folder-tree.svg" width="25"/>  Project Structure
+## <img src="icons/folder-tree.svg" width="25"/> Project Structure
 
 ```bash
 .
@@ -40,7 +40,7 @@ determine the highest quality wines based on its chemical composition.
     └── main.py
 ```
 
-## Installation
+## <img src="icons/wrench.svg" width="25"/> Installation
 
 Use [poetry](https://python-poetry.org/) for dependency management.
 
@@ -54,13 +54,13 @@ To create a virtual environment, run `poetry env activate` inside the top-level 
 To enter the virtual environment, copy and paste the last command's output.
 If you would like to exit the virtual environment, run `deactivate`.
 
-## How to Run
+## <img src="icons/play.svg" width="25"/> How to Run
 
 To run this project, simply use `make` or `make run`.
 It will generate a histogram of the alcohol distribution between red and white wines,
 which determines how common each alcohol level is among the wines.
 
-## Generated Graphs
+## <img src="icons/chart-column.svg" width="25"/> Generated Graphs
 
 After running the project, several graphs and visualizations are generated and saved in the `output/` directory:
 
@@ -76,7 +76,7 @@ After running the project, several graphs and visualizations are generated and s
 - **Accuracy per Epoch:**  
   A line plot showing how the training and validation accuracy change over each epoch.
 
-## Dataset Information
+## <img src="icons/database.svg" width="25"/> Dataset Information
 
 The two datasets are related to red and white variants of the Portuguese "Vinho Verde" wine. Due to privacy and logistic issues, only physicochemical (inputs) and sensory (the output) variables are available (e.g. there is no data about grape types, wine brand, wine selling price, etc.).
 
@@ -84,7 +84,7 @@ The dataset that this project uses is from the [UC Irvine Machine Learning Repos
 
 P. Cortez, A. Cerdeira, F. Almeida, T. Matos, and J. Reis. "Wine Quality," UCI Machine Learning Repository, 2009. [Online]. Available: https://doi.org/10.24432/C56S3T.
 
-## Example Use Cases
+## <img src="icons/grapes.svg" width="25"/> Example Use Cases
 
 - **Wine Type Classification:**
   Predict whether a wine is red or white based on its chemical properties using the trained neural network.
@@ -101,11 +101,11 @@ P. Cortez, A. Cerdeira, F. Almeida, T. Matos, and J. Reis. "Wine Quality," UCI M
 - **Model Performance Monitoring:**
   Track training and validation accuracy/loss over time to detect overfitting or underfitting and tune model hyperparameters accordingly.
 
-## Author
+## <img src="icons/pencil.svg" width="25"/> Author
 
 Kiara Houghton, 2025
 
-## Badges
+## <img src="icons/certificate.svg" width="25"/> Badges
 [![codecov](https://codecov.io/github/kiwicrossing/wine-quality-prediction/graph/badge.svg?token=G2RBXAYXXH)](https://codecov.io/github/kiwicrossing/wine-quality-prediction)
 
 
