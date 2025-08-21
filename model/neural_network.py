@@ -31,7 +31,9 @@ class WineQualityModel:
         self.model = model
         return model
 
-    def train_model(self, X_train, y_train, X_val=None, y_val=None, epochs=9, batch_size=32):
+    def train_model(
+        self, X_train, y_train, X_val=None, y_val=None, epochs=9, batch_size=32
+    ):
         """
         Trains the compiled model using the provided training data.
         Optionally accepts validation data for test accuracy/loss per epoch.
@@ -45,7 +47,9 @@ class WineQualityModel:
             epochs=epochs,
             batch_size=batch_size,
             verbose=1,
-            validation_data=(X_val, y_val) if X_val is not None and y_val is not None else None,
+            validation_data=(
+                (X_val, y_val) if X_val is not None and y_val is not None else None
+            ),
         )
         self.history = history
         return history
@@ -121,10 +125,12 @@ class WineQualityModel:
         df = pd.DataFrame(data)
         df["Epoch"] = df["Epoch"].astype(int)  # Ensure epochs are integers
 
-        fig, ax = plt.subplots(figsize=(min(1 + 0.8 * len(df.columns), 10), min(1 + 0.5 * len(df), 20)))
+        fig, ax = plt.subplots(
+            figsize=(min(1 + 0.8 * len(df.columns), 10), min(1 + 0.5 * len(df), 20))
+        )
         fig.patch.set_visible(False)
-        ax.axis('off')
-        ax.axis('tight')
+        ax.axis("off")
+        ax.axis("tight")
 
         # Format cell text: Epoch as int, others as rounded floats
         cell_text = []
@@ -134,7 +140,7 @@ class WineQualityModel:
                 formatted_row.append(f"{row[col]:.4f}")
             cell_text.append(formatted_row)
 
-        table = ax.table(cellText=cell_text, colLabels=df.columns, loc='center')
+        table = ax.table(cellText=cell_text, colLabels=df.columns, loc="center")
         table.auto_set_font_size(False)
         table.set_fontsize(10)
         table.scale(1.2, 1.2)

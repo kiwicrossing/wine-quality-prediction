@@ -1,7 +1,23 @@
 import pytest
 import numpy as np
+import os
+import matplotlib.pyplot as plt
+from unittest.mock import MagicMock
 
 from ..neural_network import WineQualityModel
+
+
+@pytest.fixture
+def mock_model():
+    model = WineQualityModel()
+    model.history = MagicMock()
+    model.history.history = {
+        "loss": [0.8, 0.6, 0.4],
+        "accuracy": [0.5, 0.7, 0.9],
+        "val_loss": [0.9, 0.7, 0.5],
+        "val_accuracy": [0.4, 0.6, 0.8],
+    }
+    return model
 
 
 def test_build_model_creates_keras_model():
@@ -53,3 +69,22 @@ def test_test_model_predicts_and_prints(monkeypatch, capsys):
     captured = capsys.readouterr()
     assert "Prediction: Red wine" in captured.out
     assert "Prediction: White wine" in captured.out
+
+
+def test_plot_training_history(tmp_path, mock_model):
+    save_dir = tmp_path
+    mock_model.plot_training_history(save_dir=str(save_dir))
+    loss_plot = save_dir / "loss_per_epoch.png"
+    acc_plot = save_dir / "accuracy_per_epoch.png"
+    assert loss_plot.exists()
+    assert acc_plot.exists()
+    assert os.path.getsize(loss_plot) > 0
+    assert os.path.getsize(acc_plot) > 0
+
+
+def test_save_training_history_table_plot(tmp_path, mock_model):
+    save_dir = tmp_path
+    mock_model.save_training_history_table_plot(save_dir=str(save_dir))
+    table_plot = save_dir / "training_history_table.png"
+    assert table_plot.exists()
+    assert os.path.getsize(table_plot) > 0

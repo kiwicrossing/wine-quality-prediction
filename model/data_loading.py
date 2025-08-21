@@ -14,7 +14,11 @@ class WineDataLoader:
     A class to load, preprocess, and visualize wine quality data.
     """
 
-    def __init__(self, red_path="dataset/winequality-red.csv", white_path="dataset/winequality-white.csv"):
+    def __init__(
+        self,
+        red_path="dataset/winequality-red.csv",
+        white_path="dataset/winequality-white.csv",
+    ):
         self.red_path = red_path
         self.white_path = white_path
         self.wines = None
@@ -107,7 +111,9 @@ class WineDataLoader:
 
         return X_train, X_test, y_train, y_test
 
-    def save_to_sqlite(self, db_path="output/database_info/wine_data.db", table_name="wines"):
+    def save_to_sqlite(
+        self, db_path="output/database_info/wine_data.db", table_name="wines"
+    ):
         """
         Saves the combined wine DataFrame to a SQLite database.
         """
