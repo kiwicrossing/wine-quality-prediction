@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+title: Wine Quality Prediction
+message: If you'd like to city this repo, here is how.
+type: software
+authors:
+  - given-names: Kiara
+    family-names: Houghton
+repository-code: 'https://github.com/kiwicrossing/wine-quality-prediction'
+license: MIT
