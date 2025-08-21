@@ -2,6 +2,7 @@ from model.data_loading import WineDataLoader
 from model.neural_network import WineQualityModel
 from model.sql_analytics import WineSQLAnalytics
 
+
 def main():
     # Load and split data
     loader = WineDataLoader()
@@ -16,8 +17,12 @@ def main():
     corr_df = analytics.feature_correlation_with_quality()
     print("\nFeature correlations with wine quality:")
     print(corr_df)
-    analytics.save_correlation_table_csv(corr_df, save_path="output/database_info/feature_correlations.csv")
-    analytics.save_correlation_table_png(corr_df, save_path="output/feature_correlations.png")
+    analytics.save_correlation_table_csv(
+        corr_df, save_path="output/database_info/feature_correlations.csv"
+    )
+    analytics.save_correlation_table_png(
+        corr_df, save_path="output/feature_correlations.png"
+    )
 
     # Build and train model
     nn = WineQualityModel()
